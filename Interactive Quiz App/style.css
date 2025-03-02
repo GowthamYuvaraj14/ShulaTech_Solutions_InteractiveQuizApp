@@ -1,0 +1,196 @@
+/* General Styling */
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%; /* So flexbox can use the full screen height */
+}
+
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    /* Center everything vertically & horizontally */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url('BG.jpg.jpg') no-repeat center center fixed; /* Single background image */
+    background-size: cover;
+    color: #fff;
+    transition: background 0.5s ease-in-out;
+}
+
+/* Background Blur Effect */
+#background-blur {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: inherit;
+    filter: blur(10px);
+    z-index: -1;
+}
+
+/* Main Container */
+.container {
+    position: relative;
+    z-index: 1;
+    background: rgba(217, 120, 218, 0.478);
+    padding: 30px;
+    border-radius: 15px;
+    display: inline-block;
+    margin-top: 10%;
+}
+
+/* Category Buttons - Displayed Vertically */
+.category-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Category Buttons */
+.category-btn {
+    background: linear-gradient(45deg, #d05825, #f73030);
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 12px 20px;
+    margin: 10px;
+    width: 250px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.category-btn:hover {
+    background: linear-gradient(45deg, #6ad4e4, #7ec8f2);
+    transform: scale(1.1);
+}
+
+/* Category Output */
+#category-output {
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+/* Hide Elements */
+.hidden {
+    display: none;
+}
+
+/* Quiz Section */
+#quiz {
+    margin-top: 30px;
+    background: rgba(100, 17, 225, 0.8);
+    color: rgb(255, 255, 255);
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+
+    /* standard size*/
+    width: 600px;
+    max-width: 90%;
+    min-height: 400px;
+    box-sizing: border-box;
+}
+
+/* Option Buttons */
+#options button {
+    display: block;
+    margin: 10px auto;
+    padding: 10px 20px;
+    width: 80%;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    background-color: #c37215;
+    color: white;
+    transition: 0.3s;
+}
+
+#options button:hover {
+    background-color: #3b22f9;
+}
+
+/* Next Button */
+#next-btn {
+    background-color: #ff3037;
+    color: white;
+    padding: 10px 15px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+#next-btn.hidden {
+    display: none;
+}
+
+/* Restart Button Design */
+#restart-btn {
+    background: linear-gradient(45deg, #4268dc, #525eff);
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 20px;
+}
+
+#restart-btn:hover {
+    background: linear-gradient(45deg, #ffc164, #ff3c00);
+    transform: scale(1.1);
+}
+
+/* Selected Option Highlight */
+.option.selected {
+    background-color: #ffcc00 !important;
+    color: #000 !important;
+}
+
+/* Animations for High Score */
+@keyframes congrats {
+  0%   { transform: scale(1);   color: #fff; }
+  50%  { transform: scale(1.2); color: #ff0; }
+  100% { transform: scale(1);   color: #0f0; }
+}
+
+.congrats {
+  animation: congrats 1s infinite;
+}
+
+/* Perfect 15 Animation */
+@keyframes perfect15 {
+  0%   { transform: scale(1); color: #fff; }
+  33%  { transform: scale(1.3); color: #ff0; }
+  66%  { transform: scale(1.1); color: #f0f; }
+  100% { transform: scale(1); color: #fff; }
+}
+
+.perfect15 {
+  animation: perfect15 1s infinite;
+}
+
+/* If user got all correct (but not necessarily 15) */
+@keyframes perfectScore {
+  0%   { transform: rotate(0);   }
+  50%  { transform: rotate(10deg); }
+  100% { transform: rotate(-10deg);}
+}
+
+.perfect {
+  animation: perfectScore 0.5s infinite;
+}
+
+*, *::before, *::after {
+  border: none !important;
+  outline: none !important;
+}
