@@ -1,4 +1,4 @@
-// Quiz Questions
+
 const categories = {
     "General Knowledge": [
         { question: "1).What is the capital of France?", options: ["Berlin", "Madrid", "Paris", "Rome"], answer: "Paris" },
@@ -195,10 +195,7 @@ const categories = {
     button.addEventListener("click", function () {
       const selectedCategory = button.getAttribute("data-category");
       
-  
-      // Keep the same background for all categories
-      // So no background change here
-  
+ 
       currentCategory = categories[selectedCategory] || [];
   
       if (currentCategory.length > 0) {
